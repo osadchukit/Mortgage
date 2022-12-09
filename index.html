@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Mortgage_64_2</title>
+</head>
+
+<body>
+    <!-- customers -->
+    <section class="customers">
+        <div class="container">
+            <h2 class="box-title">Отримання іпотеки в різних банках України</h2>
+            <ul class="customers__list list">
+                <li class="card-clients">
+                    <a href="" class="card-clients__link link" data-modal-open>
+                        <svg class="card-clients__icon" width="106" height="60">
+                            <use href="./img/icons.svg#icon-Logo1"></use>
+                        </svg>
+                    </a>
+                    <button type="button" class="hero__btn button button1" data-modal-open>Укргазбанк</button>
+                </li>
+                <li class="card-clients">
+                    <a href="" class="card-clients__link link">
+                        <svg class="card-clients__icon" width="106" height="60">
+                            <use href="./img/icons.svg#icon-Logo2"></use>
+                        </svg>
+                    </a>
+                    <button type="button" class="hero__btn button" data-modal-open>Укрексімбанк</button>
+                </li>
+                <li class="card-clients">
+                    <a href="" class="card-clients__link link">
+                        <svg class="card-clients__icon" width="106" height="60">
+                            <use href="./img/icons.svg#icon-Logo3"></use>
+                        </svg>
+                    </a>
+                    <button type="button" class="hero__btn button" data-modal-open>Альфа-Банк</button>
+                </li>
+                <li class="card-clients">
+                    <a href="" class="card-clients__link link">
+                        <svg class="card-clients__icon" width="106" height="60">
+                            <use href="./img/icons.svg#icon-Logo4"></use>
+                        </svg>
+                    </a>
+                    <button type="button" class="hero__btn button" data-modal-open>Райффайзен Банк</button>
+                </li>
+                <li class="card-clients">
+                    <a href="" class="card-clients__link link">
+                        <svg class="card-clients__icon" width="106" height="60">
+                            <use href="./img/icons.svg#icon-Logo5"></use>
+                        </svg>
+                    </a>
+                    <button type="button" class="hero__btn button" data-modal-open>Ощадбанк</button>
+                </li>
+                <li class="card-clients">
+                    <a href="" class="card-clients__link link">
+                        <svg class="card-clients__icon" width="106" height="60">
+                            <use href="./img/icons.svg#icon-Logo6"></use>
+                        </svg>
+                    </a>
+                    <button type="button" class="hero__btn button" data-modal-open>Приватбанк</button>
+                </li>
+            </ul>
+        </div>
+    </section>
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__subscribe">
+                <p class="footer__title">введіть назву банку</p>
+                <form class="footer__form">
+                    <input type="text" name="footer-mail" id="footer-mail" class="footer__input" placeholder="банк" required>
+                    <button type="submit" class="footer__btn button">Пошук</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <!-- modal -->
+    <div class="backdrop is-hidden" data-modal> 
+        <div class="modal">
+            <button type="button" class="modal__btn-close button" data-modal-close>
+                <svg class="soc__icon" width="20" height="20">
+                    <use href="./img/icons.svg#icon-close-black"></use>
+                </svg>
+
+                <!-- registration -->
+            </button>
+            <form class="modal__form">
+                <ul class="modal__list list">
+                    <li class="modal__item">
+                        <label class="modal__label" for="user-name">Ім'я</label>
+                        <div class="modal__wrap">
+                            <input type="text" name="user-name" id="user-name" class="modal__input" required>
+                        </div>
+                    </li>
+                    <li class="modal__item">
+                        <label class="modal__label" for="user-mail">Пошта</label>
+                        <div class="modal__wrap">
+                            <input type="email" name="uset-mail" id="user-mail" class="modal__input" required>
+                        </div>
+                    </li>
+                    <li class="modal__item">
+                        <label class="modal__label" for="user-tel">Телефон</label>
+                        <div class="modal__wrap">
+                            <input type="tel" name="uset-tel" id="user-tel" class="modal__input" required>
+                        </div>
+                    </li>
+                </ul>
+                <div class="modal__textarea">
+                    <label class="modal__label" for="user-text-area">Коментарій</label>
+                    <textarea name="user-text-area" id="user-text-area" class="modal__area"
+                        placeholder="Введіть текст"></textarea>
+                </div>
+
+                <button type="submit" class="modal__btn button">Надіслати</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="./js/modal.js"></script>
+</body>
+
+</html>
