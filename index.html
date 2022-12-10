@@ -15,10 +15,38 @@
 </head>
 
 <body>
+    <h2 class="box-title">Отримання іпотеки в різних банках України</h2>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__subscribe">
+
+                <!-- <p class="footer__title">введіть назву банку</p> -->
+
+                <label class="footer__title" for="cars">введіть назву банку</label>
+
+                <form class="footer__form">
+
+
+                    <select class="footer__input" name="cars" id="cars">
+                        <option value="volvo">Укргазбанк</option>
+                        <option value="saab">Укрексімбанк</option>
+                        <option value="mercedes">Альфа-Банк</option>
+                        <option value="audi">Райффайзен Банк</option>
+                        <option value="audi">Ощадбанк</option>
+                        <option value="audi">Приватбанк</option>
+                    </select>
+
+                    <!-- <input type="text" name="footer-mail" id="footer-mail" class="footer__input" placeholder="банк" required>
+                    <button type="submit" class="footer__btn button">Пошук</button> -->
+                </form>
+            </div>
+        </div>
+    </footer>
     <!-- customers -->
     <section class="customers">
         <div class="container">
-            <h2 class="box-title">Отримання іпотеки в різних банках України</h2>
+           
             <ul class="customers__list list">
                 <li class="card-clients">
                     <a href="" class="card-clients__link link" data-modal-open>
@@ -72,21 +100,10 @@
         </div>
     </section>
     </main>
-    <!-- footer -->
-    <footer class="footer">
-        <div class="footer__container container">
-            <div class="footer__subscribe">
-                <p class="footer__title">введіть назву банку</p>
-                <form class="footer__form">
-                    <input type="text" name="footer-mail" id="footer-mail" class="footer__input" placeholder="банк" required>
-                    <button type="submit" class="footer__btn button">Пошук</button>
-                </form>
-            </div>
-        </div>
-    </footer>
+
 
     <!-- modal -->
-    <div class="backdrop is-hidden" data-modal> 
+    <div class="backdrop is-hidden" data-modal>
         <div class="modal">
             <button type="button" class="modal__btn-close button" data-modal-close>
                 <svg class="soc__icon" width="20" height="20">
