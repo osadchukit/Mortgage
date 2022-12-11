@@ -36,6 +36,6 @@ const bankBox = document.querySelector('.bank-box');
 
 bankBox.append(listEl, markupBtnAddBankItem);
 
-listEl.addEventListener('click', (event) => {
+listEl.addEventListener('click', event => {
   console.log(banks.find(bank => bank.name === event.target.textContent));
 });
