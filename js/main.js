@@ -75,17 +75,25 @@ markupBtnAddBankItem.textContent = 'Додати банк';
 listEl.insertAdjacentHTML('beforeend', renderBankList(banks));
 
 const bankBox = document.querySelector('.bank-box');
+const bankInfo = document.querySelector('.bank-info');
 
 bankBox.append(listEl, markupBtnAddBankItem);
 
 listEl.addEventListener('click', event => {
-  console.log(
-    banks.find(bank => {
-      // перевіряє клік на <img> logo і спрямовує клік батьківський <li>
-      if (!event.target.id && event.target.closest('li')) {
-        return bank.id === event.target.closest('li').id;
-      }
-      return bank.id === event.target.id;
-    })
-  );
+  const choosenBank = banks.find(bank => {
+    // перевіряє клік на <img> logo і спрямовує клік на батьківський <li>
+    if (!event.target.id && event.target.closest('li')) {
+      return bank.id === event.target.closest('li').id;
+    }
+    return bank.id === event.target.id;
+  });
+  console.log('choosenBank :>> ', choosenBank);
+
+  const bankInfoMarkup = `<h2>${choosenBank.name}bank</h2>
+    <p>Сума займу: ${choosenBank.maxLoan} грн.</p>
+    <p>Відсоткова ставка: ${choosenBank.interestRate}%</p>
+    <p>Мінімальний платіж: ${choosenBank.minPayment} грн.</p>
+    <p>Строк займу: ${choosenBank.loanTerm} місяців.</p>`;
+
+  bankInfo.innerHTML = bankInfoMarkup;
 });

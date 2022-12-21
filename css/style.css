@@ -5,6 +5,7 @@ html {
 body {
   margin: 30px;
   color: #212121;
+  font-family: 'Roboto', sans-serif;
   font-size: 22px;
   /* background: #EAEAEA url(/img/fon.png) */
   background-color: rgb(255, 255, 255);
