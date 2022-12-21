@@ -18,14 +18,19 @@ const banks = [
 ];
 
 const rootRef = document.querySelector('#root');
-const markup = `<div class="bank-box"></div>
-      <div class="bank-info"></div>`;
+const markup = `
+<div class="bank-box"></div>
+<div class="bank-info"></div>`;
+
 rootRef.insertAdjacentHTML('beforeend', markup);
 
 const renderBankList = banks =>
-  banks.map(el => `<li class = "item__name">${el.name}</li> `).join('');
+  banks.map(el => `
+  <li class = "item__name">${el.name}</li>
+  `).join('');
 
 const listEl = document.createElement('ul');
+
 const markupBtnAddBankItem = document.createElement('button');
 markupBtnAddBankItem.classList.add('btn');
 markupBtnAddBankItem.textContent = 'Добавити банк';
@@ -33,7 +38,6 @@ markupBtnAddBankItem.textContent = 'Добавити банк';
 listEl.insertAdjacentHTML('beforeend', renderBankList(banks));
 
 const bankBox = document.querySelector('.bank-box');
-
 bankBox.append(listEl, markupBtnAddBankItem);
 
 listEl.addEventListener('click', event => {
