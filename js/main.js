@@ -89,7 +89,7 @@ listEl.addEventListener('click', event => {
   });
   console.log('choosenBank :>> ', choosenBank);
 
-  const bankInfoMarkup = `<h2>${choosenBank.name}bank</h2>
+  const bankInfoMarkup = `<h2>${choosenBank.name}bank</h2><br>
     <p>Сума займу: ${choosenBank.maxLoan} грн.</p>
     <p>Відсоткова ставка: ${choosenBank.interestRate}%</p>
     <p>Мінімальний платіж: ${choosenBank.minPayment} грн.</p>
