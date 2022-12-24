@@ -1,4 +1,4 @@
-const banks = [
+let banks = [
   {
     id: '435tr34wrt',
     name: 'Mono',
@@ -52,6 +52,7 @@ bankBox.append(listEl, markupBtnAddBankItem);
 const findBankById = id => banks.find(bank => bank.id === id);
 
 listEl.addEventListener('click', event => {
+  const choosenBankID = event.target.closest('.item__name').dataset.id;
   if (event.target.nodeName === 'UL') {
     return;
   }
@@ -61,11 +62,10 @@ listEl.addEventListener('click', event => {
   }
   if (event.target.closest('.delete')) {
     console.log('delete');
+    deleteBank(choosenBankID);
     return;
   }
-  const currentBank = findBankById(
-    event.target.closest('.item__name').dataset.id
-  );
+  const currentBank = findBankById(choosenBankID);
   bankInfoMarkup(currentBank);
 });
 
@@ -77,4 +77,10 @@ function bankInfoMarkup({ name, interestRate, maxLoan, minPayment, loanTerm }) {
     <p>термін кридитуванню ${loanTerm} міс</p>`;
 
   infoBank.innerHTML = markup;
+}
+
+function deleteBank(id) {
+  banks = banks.filter(bank => bank.id !== id);
+  listEl.innerHTML = '';
+  listEl.insertAdjacentHTML('beforeend', renderBankList(banks));
 }
