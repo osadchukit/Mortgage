@@ -25,9 +25,13 @@ const markup = `
 rootRef.insertAdjacentHTML('beforeend', markup);
 
 const renderBankList = banks =>
-  banks.map(el => `
-  <li class = "item__name">${el.name}</li>
-  `).join('');
+  banks
+    .map(
+      el => `
+  <li data-id="${el.id}" class = "item__name">${el.name}</li>
+  `
+    )
+    .join('');
 
 const listEl = document.createElement('ul');
 
@@ -40,6 +44,15 @@ listEl.insertAdjacentHTML('beforeend', renderBankList(banks));
 const bankBox = document.querySelector('.bank-box');
 bankBox.append(listEl, markupBtnAddBankItem);
 
+
+const findBankById = id => banks.find(bank => bank.id === id)
+
 listEl.addEventListener('click', event => {
-  console.log(banks.find(bank => bank.name === event.target.textContent));
+  findBankById(event.target.dataset.id)
+  const carrent
 });
+
+
+
+
+// event.target.dataset.id;
