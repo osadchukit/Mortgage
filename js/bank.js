@@ -24,6 +24,9 @@ const markup = `
 
 rootRef.insertAdjacentHTML('beforeend', markup);
 
+const bankBox = document.querySelector('.bank-box');
+const infoBank = document.querySelector('.bank-info');
+
 const renderBankList = banks =>
   banks
     .map(
@@ -41,18 +44,22 @@ markupBtnAddBankItem.textContent = 'Добавити банк';
 
 listEl.insertAdjacentHTML('beforeend', renderBankList(banks));
 
-const bankBox = document.querySelector('.bank-box');
 bankBox.append(listEl, markupBtnAddBankItem);
 
-
-const findBankById = id => banks.find(bank => bank.id === id)
+const findBankById = id => banks.find(bank => bank.id === id);
 
 listEl.addEventListener('click', event => {
-  findBankById(event.target.dataset.id)
-  const carrent
+  const currentBank = findBankById(event.target.dataset.id);
+  bankInfoMarkup(currentBank);
 });
 
+function bankInfoMarkup({ name, interestRate, maxLoan, minPayment, loanTerm }) {
+  const markup = `<h2>${name}</h2>
+    <p>кридитна ставка ${interestRate}%</p>
+    <p>максимальна сума ${maxLoan}грн</p>
+    <p>мінімальний платіж ${minPayment}грн</p>
+    <p>термін кридитуванню ${loanTerm} міс</p>`;
 
-
-
+  infoBank.innerHTML = markup;
+}
 // event.target.dataset.id;
