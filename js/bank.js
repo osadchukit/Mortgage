@@ -31,7 +31,10 @@ const renderBankList = banks =>
   banks
     .map(
       el => `
-  <li data-id="${el.id}" class = "item__name">${el.name}</li>
+  <li data-id="${el.id}" class = "item__name">${el.name} <div class="controls">
+  <button class="edit">E</button>
+<button class="delete">D</button>
+</div></li>
   `
     )
     .join('');
@@ -49,7 +52,20 @@ bankBox.append(listEl, markupBtnAddBankItem);
 const findBankById = id => banks.find(bank => bank.id === id);
 
 listEl.addEventListener('click', event => {
-  const currentBank = findBankById(event.target.dataset.id);
+  if (event.target.nodeName === 'UL') {
+    return;
+  }
+  if (event.target.closest('.edit')) {
+    console.log('edit');
+    return;
+  }
+  if (event.target.closest('.delete')) {
+    console.log('delete');
+    return;
+  }
+  const currentBank = findBankById(
+    event.target.closest('.item__name').dataset.id
+  );
   bankInfoMarkup(currentBank);
 });
 
@@ -62,4 +78,3 @@ function bankInfoMarkup({ name, interestRate, maxLoan, minPayment, loanTerm }) {
 
   infoBank.innerHTML = markup;
 }
-// event.target.dataset.id;
